@@ -1,5 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const connection = require('./server.js')
+const showAllDepartments = require('./server.js')
+const showAllRoles = require('./server.js')
+
 
 const promptAllOptions = () => {
     return inquirer.prompt([
@@ -11,12 +15,12 @@ const promptAllOptions = () => {
         },
         {
         name: 'viewDepartments',
-        message: 'Testing to view all departments', ///need to input function here
+        message: showAllDepartments, ///need to input function here
         when: (data) => data.allOptions === 'View All Departments'
         },
         {
         name: 'viewRoles',
-        message: 'Testing to view all roles', ///need to input function here
+        message: showAllRoles, ///need to input function here
         when: (data) => data.allOptions === 'View All Roles'
         },
         {

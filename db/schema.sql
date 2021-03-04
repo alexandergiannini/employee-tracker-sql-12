@@ -11,7 +11,8 @@ DROP DATABASE IF EXISTS work_db;
     CREATE TABLE role(
         id INTEGER (20) AUTO_INCREMENT NOT NULL,
         title VARCHAR(30),
-        salary DECIMAL,
+        salary INTEGER(100),
+        departmentName VARCHAR(30),
         PRIMARY KEY (id)
     );
 
@@ -20,6 +21,6 @@ DROP DATABASE IF EXISTS work_db;
         first_name VARCHAR(30),
         last_name VARCHAR(30),
         role_id INTEGER(30), 
-        manager_id INTEGERV (30),
+        manager_id INTEGER (30),
         PRIMARY KEY (id)
     );
