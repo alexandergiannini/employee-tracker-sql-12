@@ -1,6 +1,9 @@
 INSERT INTO department(departmentName)
 VALUES ("Legal"),("Engineering"),("HR"), ("Product"), ("Design"); /*SELECT * FROM department;*/
 
-INSERT INTO role(title, salary, departmentName)
-VALUES ("Software Engineer", 120000, "Engineering"), ("Product Manager", 150000, "Product"), ("Junior Lawyer", 130000, "Legal"), ("HR Analyst", 80000, "HR"), ("Junior Engineer", 100000, "Engineering"), ("Senior Product Manager", 180000, "Product"), ("UX Design Lead", 115000, "Design")
+INSERT INTO roles(title, salary, departmentName) /*SELECT * FROM roles;*/
+VALUES ("Software Engineer", 100000, "Engineering"), ("QA Analyst", 70000, "Engineering"), ("Product Manager", 120000, "Product");
 
+
+INSERT INTO employee(first_name, last_name, jobTitle, departmentName, manager)
+VALUES ("Alex", "Giannini", "QA Analyst", "Engineering", "Tim"), ("Lance", "Ngo", "Business Analyst", "Finance", "Spencer"), ("Sean", "Bertram", "Tax Analyst", "Tax", "John");

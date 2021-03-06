@@ -8,8 +8,8 @@ DROP DATABASE IF EXISTS work_db;
         PRIMARY KEY (id)
     );
 
-    CREATE TABLE role(
-        id INTEGER (20) AUTO_INCREMENT NOT NULL,
+    CREATE TABLE roles(
+        id INTEGER(20) AUTO_INCREMENT NOT NULL,
         title VARCHAR(30),
         salary INTEGER(100),
         departmentName VARCHAR(30),
@@ -17,10 +17,11 @@ DROP DATABASE IF EXISTS work_db;
     );
 
     CREATE TABLE employee(
-        id INTEGER (20) AUTO_INCREMENT NOT NULL,
+        id INTEGER(20) AUTO_INCREMENT NOT NULL,
         first_name VARCHAR(30),
         last_name VARCHAR(30),
-        role_id INTEGER(30), 
-        manager_id INTEGER (30),
+        jobTitle VARCHAR(30),
+        departmentName VARCHAR(30),
+        manager VARCHAR(30),
         PRIMARY KEY (id)
     );
