@@ -1,7 +1,7 @@
-const inquirer = require('inquirer');
-const Database = require('./server.js');
+const inquirer = require('inquirer'); ///requiring inquirer here
+const Database = require('./server.js'); //requiring DB class from server file
 
-
+//inquirer function prompts when user runs this file
 const promptAllOptions = () => {
      inquirer.prompt([
         {
@@ -80,55 +80,55 @@ const promptAllOptions = () => {
     .then(answers => {
         switch (answers.allOptions) {
             case "View All Departments":
-            Database.showAllDepartments().then((results) => {
-            console.table(results)
-            promptAllOptions()
+            Database.showAllDepartments().then((results) => { ///show department function runs here
+            console.table(results);
+            promptAllOptions();
             })
             break;
 
             case "View All Employees":
-            Database.showAllEmployees().then((results) => {
-            console.table(results)
-            promptAllOptions()
+            Database.showAllEmployees().then((results) => { ////show employee function runs here
+            console.table(results);
+            promptAllOptions();
             })
             break;
 
             case "View All Roles":
-            Database.showAllRoles().then((results) => {
-            console.table(results)
-            promptAllOptions()
+            Database.showAllRoles().then((results) => { ///show all roles function runs here
+            console.table(results);
+            promptAllOptions();
             })
             break;
 
             case "Add a Department":
-            Database.addDepartment(answers.departmentName).then((results) => {
-            console.log("Adding a department has succeeded.")
-            promptAllOptions()
+            Database.addDepartment(answers.departmentName).then((results) => { ///add department function runs here
+            console.log("Adding a department has succeeded.");
+            promptAllOptions();
             })
             break;
 
             case "Add a Role":
-            Database.addRole(answers.roleName, answers.roleSalary, answers.roleDepartment).then((results) => {
-            console.log('Adding a role has succeeded.')
-            promptAllOptions()
+            Database.addRole(answers.roleName, answers.roleSalary, answers.roleDepartment).then((results) => { ///add role function runs here
+            console.log('Adding a role has succeeded.');
+            promptAllOptions();
             })
             break;
 
-            case "Add an Employee":
+            case "Add an Employee": ///add employee function runs here
             Database.addEmployee(answers.employeeFirst, answers.employeeLast, answers.employeeRole, answers.employeeDepartment, answers.employeeManager).then((results) => {
-            console.log('Adding an employee has succeeded.')
-            promptAllOptions()
+            console.log('Adding an employee has succeeded.');
+            promptAllOptions();
             })
             break;
 
             case "Update an Employee Role":
-            Database.updateEmployee(answers.whichEmployee, answers.employeeRoleUpdate).then((results) => {
-            console.log('Employee role has been updated.')
-            promptAllOptions()
+            Database.updateEmployee(answers.whichEmployee, answers.employeeRoleUpdate).then((results) => { //updating employee role function runs here
+            console.log('Employee role has been updated.');
+            promptAllOptions();
             })
             break;
         }
     })
 }
 
-promptAllOptions()
+promptAllOptions(); //calling prompt all functions here
